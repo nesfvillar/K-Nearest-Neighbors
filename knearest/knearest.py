@@ -1,11 +1,14 @@
-from collections import Counter
 import heapq
 import math
+from collections import Counter
 
 
 class KNearest:
-    def __init__(self, data_points: [tuple[any, tuple]]):
-        self._data_points = data_points
+    def __init__(self, data_points: [tuple[any, tuple]] = None):
+        if data_points is None:
+            self._data_points = []
+        else:
+            self._data_points = data_points
 
     def add_data_point(self, data_point: [any, tuple]):
         self._data_points.append(data_point)
